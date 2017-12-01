@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+   <aside class="aside" th:fragment="left">
+      <div class="aside-inner">
+         <nav class="sidebar" data-sidebar-anyclick-close="">
+            <ul class="nav">
+               <li class="has-user-block">
+                  <div>
+                     <div class="item user-block">
+                        <div class="user-block-picture">
+                           <div class="user-block-status">
+                              <a href="javascript:void(0);" th:onclick="'locationUrl(\'/user/'+${user.id}+'/0\',\'\');'">
+                                 <img alt="" class="img-thumbnail img-circle"  th:src="${user.profilePicture == null?'img/favicon.png':user.profilePicture}" id="leftProfilePicture"/></a>
+                              <div class="circle circle-success circle-lg"></div>
+                           </div>
+                        </div>
+                        <div class="user-block-info">
+                           <div class="user-block-name" th:text="'欢迎  '+${user.userName}" id="leftUserName">欢迎 欢迎</div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <li class="nav-heading ">主导航</li>
+               <li class="" id="home">
+                  <a title="首页"  href="javascript:void(0);"  onclick="locationUrl('/standard/my/0','home')">
+                     <em class="icon-home"></em>
+                     <span>首页</span>
+                  </a>
+               </li>
+               <li class=" " id="unread">
+               </li>
+               <li class=" " >
+                  <a data-toggle="collapse" title="导航1" href="#favorites">
+                     <em class="icon-folder"></em>
+                     <span>导航1</span>
+                  </a>
+                  <ul class="nav sidebar-subnav collapse" id="favorites">
+                     <li class="sidebar-subnav-header">导航2</li>
+                     <li id="newFavortes" class=" ">
+                        <a title="导航2" href="javascript:void(0);" onclick="locationUrl('/newFavorites','newFavortes')">
+                           <span>导航2</span>
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+               <li class=" " id="explore" >
+                  <a title="导航3" href="javascript:void(0);"  onclick="locationUrl('/standard/explore/0','explore')">
+                     <em class="icon-compass"></em>
+                     <span>导航3</span>
+                  </a>
+               </li>
+            </ul>
+         </nav>
+      </div>
+   </aside>
+</body>
+</html>
+
